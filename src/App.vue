@@ -1,17 +1,13 @@
 <template>
   <div class="box">
-    <h1>我新增一个标题</h1>
+    <el-button type="primary" size="small" :icon="Plus">主要按钮</el-button>
+    <el-button type="success" size="deault" :icon="Edit">编辑按钮</el-button>
+    <el-button type="danger" size="large" :icon="Delete">删除按钮</el-button>
+    <el-pagination layout="prev, pager, next, jumper" :total="1000" />
   </div>
 </template>
 <script setup lang="ts">
-for (let i = 0; i < 100; i++) {
-  console.log(i)
-}
+//引入图标组件
+import { Plus, Edit, Delete } from '@element-plus/icons-vue'
 </script>
-<style scoped lang="scss">
-.box {
-  width: 600px;
-  height: 400px;
-  background-color: #000;
-}
-</style>
+<style scoped lang="scss"></style>
