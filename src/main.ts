@@ -17,6 +17,10 @@ app.use(ElementPlus, {
 //svg插件需要配置的代码
 import 'virtual:svg-icons-register'
 
-console.log(import.meta.env)
+//引入自定义插件对象:注册整个项目全局组件
+import globalComponent from '@/components/index.ts'
+//安装自定义插件
+app.use(globalComponent)
+
 //将应用挂在到挂载点上
 app.mount('#app')
