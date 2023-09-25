@@ -14,6 +14,8 @@ const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn, //element-plus国际化的配置
 })
+//svg插件需要配置的代码
+import 'virtual:svg-icons-register'
 
 console.log(import.meta.env)
 //将应用挂在到挂载点上
