@@ -12,5 +12,6 @@
 //引入图标组件
 import { Plus, Edit, Delete } from '@element-plus/icons-vue'
 import Test from '@/components/Test.vue'
+console.log(import.meta.env)
 </script>
 <style scoped lang="scss"></style>
