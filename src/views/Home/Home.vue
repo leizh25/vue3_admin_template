@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view></router-view>
+    <h1>我是一级路由-Home展示登录成功以后得数据</h1>
   </div>
 </template>
 <script setup lang="ts"></script>
