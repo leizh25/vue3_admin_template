@@ -85,7 +85,7 @@ const validateUsername = (_rule: any, value: any, callback: any) => {
   else callback(new Error('账号长度至少5位'))
 }
 const validatePassword = (_rulea: any, value: any, callback: any) => {
-  if (value.length >= 6) callback
+  if (value.length >= 6) callback()
   else callback(new Error('密码长度至少6位'))
 }
 
