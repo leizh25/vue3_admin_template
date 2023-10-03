@@ -17,7 +17,7 @@
     <div class="layout_tabbar">456</div>
     <!-- 内容展示区 -->
     <div class="layout_main">
-      <p style="height: 10000px; background-color: #bfa"></p>
+      <Main></Main>
     </div>
   </div>
 </template>
@@ -25,6 +25,8 @@
 //引入左侧菜单子组件
 import Logo from './Logo/Logo.vue'
 import Menu from './Menu/Menu.vue'
+//右侧内容展示区域
+import Main from './Main/Main.vue'
 //获取用户相关的小仓库
 import useUserStore from '@/store/modules/user'
 let userStore = useUserStore()
