@@ -16,6 +16,9 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 //引入路由
 import router from '@/router'
 
+//引入仓库
+import pinia from './store'
+
 //获取应用实例对象
 const app = createApp(App)
 //安装element-plus插件
@@ -25,7 +28,8 @@ app.use(ElementPlus, {
 
 //安装自定义插件
 app.use(globalComponent)
-
+//安装仓库pinia
+app.use(pinia)
 //注册模板路由
 app.use(router)
 //将应用挂在到挂载点上
