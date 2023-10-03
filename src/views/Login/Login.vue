@@ -3,14 +3,14 @@
     <el-row>
       <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
-        <el-form class="login_form">
+        <el-form class="login_form" :model="loginFormData" :rules="rules" ref="loginForm">
           <h1>Hello</h1>
           <h2>欢迎来到硅谷甄选</h2>
-          <el-form-item>
-            <el-input :prefix-icon="User" v-model="loginForm.username"></el-input>
+          <el-form-item prop="username">
+            <el-input :prefix-icon="User" v-model="loginFormData.username"></el-input>
           </el-form-item>
-          <el-form-item>
-            <el-input :prefix-icon="Lock" type="password" show-password v-model="loginForm.password"></el-input>
+          <el-form-item prop="password">
+            <el-input :prefix-icon="Lock" type="password" show-password v-model="loginFormData.password"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button class="login_btn" type="primary" size="default" :loading="loading" @click="login">登录</el-button>
@@ -34,11 +34,16 @@ let userStore = useUserStore()
 //获取路由器
 let $router = useRouter()
 //收集账号与密码的数据
-let loginForm = reactive({ username: 'admin', password: '111111' })
+let loginFormData = reactive({ username: 'admin', password: '111111' })
 //定义一个变量控制按钮按钮加载效果
 let loading = ref(false)
+//获取el-form组件
+let loginForm = ref()
 //登录按钮的回调
 const login = async () => {
+  //保证全局表单项校验通过再发请求
+  await loginForm.value.validate()
+
   //加载效果:开始加载
   loading.value = true
   //点击登录按钮以后干什么?
@@ -47,7 +52,7 @@ const login = async () => {
   //请求失败 -> 弹出登录失败信息
   try {
     //保证登录成功
-    await userStore.userLogin(loginForm)
+    await userStore.userLogin(loginFormData)
     //编程式导航跳转到展示数据首页
     $router.push('/')
     //登录成功提示信息
@@ -67,6 +72,17 @@ const login = async () => {
       message: (error as Error).message,
     })
   }
+}
+//定义表单对象需要的配置对象
+const rules = {
+  //规则对象属性的说明:
+  //required,代表字段务必要校验的
+  //min:文本的长度至少多少位
+  //max:文本的长度最多多少位
+  //message:错误的提示信息
+  //trigger:触发校验表单的时机  change:文本发生变化  blur:失去焦点
+  username: [{ required: true, min: 6, max: 10, message: '账号长度应为6-10位', trigger: 'blur' }],
+  password: [{ required: true, min: 6, max: 15, message: '密码长度应为6-15位', trigger: 'change' }],
 }
 </script>
 
