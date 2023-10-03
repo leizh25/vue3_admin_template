@@ -1,16 +1,21 @@
 <template>
   <div class="layout_container">
     <!-- 左侧菜单 -->
-    <div class="layout_slider">123</div>
+    <div class="layout_slider">
+      <Logo></Logo>
+    </div>
     <!-- 顶部导航 -->
     <div class="layout_tabbar">456</div>
     <!-- 内容展示区 -->
     <div class="layout_main">
-        <p style="height: 10000px;background-color: #bfa;"></p>
+      <p style="height: 10000px; background-color: #bfa"></p>
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+//引入左侧菜单子组件
+import Logo from './Logo/Logo.vue'
+</script>
 <style scoped lang="scss">
 .layout_container {
   width: 100%;
