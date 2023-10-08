@@ -8,6 +8,6 @@
 .box {
   width: 100%;
   height: 400px;
-  background-color:#bfa
+  background-color: #bfa;
 }
 </style>

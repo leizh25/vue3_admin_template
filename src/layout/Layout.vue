@@ -34,7 +34,6 @@ import useUserStore from '@/store/modules/user'
 let userStore = useUserStore()
 //获取路由对象
 let $route = useRoute()
-
 </script>
 
 <style scoped lang="scss">

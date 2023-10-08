@@ -9,15 +9,15 @@
 </template>
 <script setup lang="ts"></script>
 <style scoped>
-.fade-enter-from{
-    opacity: 0;
-    transform:scale(0)
+.fade-enter-from {
+  opacity: 0;
+  transform: scale(0);
 }
-.fade-enter-active{
-    transition: all .3s
+.fade-enter-active {
+  transition: all 0.3s;
 }
-.fade-enter-to{
-    opacity:1;
-    transform:scale(1)
+.fade-enter-to {
+  opacity: 1;
+  transform: scale(1);
 }
 </style>
