@@ -2,11 +2,11 @@
   <el-button size="small" circle icon="Refresh" @click="updateRefresh"></el-button>
   <el-button size="small" circle icon="FullScreen" @click="fullScreen"></el-button>
   <el-button size="small" circle icon="Setting"></el-button>
-  <img src="../../../../public/logo.png" style="width: 24px; height: 24px; margin: 0 10px" />
+  <img :src="userStore.avatar" style="width: 24px; height: 24px; margin: 0 10px; border-radius: 50%" />
   <!-- 下拉菜单 -->
   <el-dropdown>
     <span class="el-dropdown-link">
-      Admin
+      {{ userStore.userName }}
       <el-icon class="el-icon--right"><arrow-down /></el-icon>
     </span>
     <template #dropdown>
@@ -19,7 +19,9 @@
 <script setup lang="ts">
 //过去layout小仓库
 import useLayoutSettingStore from '@/store/modules/setting'
-
+//获取用户相关小仓库
+import useUserStore from '@/store/modules/user'
+const userStore = useUserStore()
 const layoutSettingStore = useLayoutSettingStore()
 //刷新按钮点击的回调
 const updateRefresh = () => {
