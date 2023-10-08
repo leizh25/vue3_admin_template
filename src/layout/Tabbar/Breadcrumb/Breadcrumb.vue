@@ -10,7 +10,6 @@
   </el-breadcrumb>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
 import useLayoutSettingStore from '@/store/modules/setting.ts'
 //获取layout配置相关的仓库
 let layoutSettingStore = useLayoutSettingStore()

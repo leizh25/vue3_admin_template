@@ -7,7 +7,13 @@
       <!-- 滚动组件 -->
       <el-scrollbar class="scrollbar">
         <!-- 菜单组件 -->
-        <el-menu background-color="#00152b" text-color="white" active-text-color="yellowgreen" :default-active="$route.path">
+        <el-menu
+          background-color="#00152b"
+          text-color="white"
+          active-text-color="yellowgreen"
+          :default-active="$route.path"
+          :collapse="layoutSettingStore.fold ? true : false"
+        >
           <!-- 根据路由动态生成菜单 -->
           <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
