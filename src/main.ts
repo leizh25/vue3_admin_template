@@ -11,6 +11,7 @@ import globalComponent from '@/components/index.ts'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 //配置element-plus国际化
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 //引入路由

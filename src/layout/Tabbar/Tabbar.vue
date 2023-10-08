@@ -10,7 +10,7 @@
 </template>
 <script setup lang="ts">
 import Breadcrumb from './Breadcrumb/Breadcrumb.vue'
-import Setting from "./Setting/Setting.vue"
+import Setting from './Setting/Setting.vue'
 </script>
 <style scoped lang="scss">
 .tabbar {
@@ -18,7 +18,7 @@ import Setting from "./Setting/Setting.vue"
   height: 100%;
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(to right,rgb(211, 201, 201),rgb(212, 184, 184),rgb(215, 161, 161));
+  background-image: linear-gradient(to right, rgb(211, 201, 201), rgb(212, 184, 184), rgb(215, 161, 161));
 
   .tabbar_left {
     display: flex;

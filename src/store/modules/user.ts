@@ -10,7 +10,7 @@ import { GET_TOKEN, SET_TOKEN } from '@/utils/token'
 //引入路由(常量路由)
 import { constantRoutes } from '@/router/routes'
 //创建用户小仓库
-let useUserStore = defineStore('User', {
+const useUserStore = defineStore('User', {
   //小仓库存储数据的地方
   state: (): UserState => {
     return {
@@ -22,7 +22,7 @@ let useUserStore = defineStore('User', {
   actions: {
     //用户登录的方法
     async userLogin(data: loginForm) {
-      let res: loginResponseData = await reqLogin(data)
+      const res: loginResponseData = await reqLogin(data)
       // console.log('res: ', res);
       //登录请求成功200 ->token
       //登录请求失败201 ->登录失败错误信息
