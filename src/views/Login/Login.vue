@@ -26,13 +26,15 @@ import { Lock, User } from '@element-plus/icons-vue'
 import { reactive, ref } from 'vue'
 //引入用户相关的小仓库
 import useUserStore from '@/store/modules/user'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { ElNotification } from 'element-plus'
 //引入获取当前时间的函数
 import { getTime } from '@/utils/time'
 let userStore = useUserStore()
 //获取路由器
 let $router = useRouter()
+//获取路由对象
+const $route = useRoute()
 //收集账号与密码的数据
 let loginFormData = reactive({ username: 'admin', password: '111111' })
 //定义一个变量控制按钮按钮加载效果
@@ -54,7 +56,8 @@ const login = async () => {
     //保证登录成功
     await userStore.userLogin(loginFormData)
     //编程式导航跳转到展示数据首页
-    $router.push('/')
+    //判断登录的时候, 路由路径当中是否有query参数,如果有就往query参数挑转, 没有就跳转到首页
+    $router.push($route.query.redirect ? ($route.query.redirect as string) : '/')
     //登录成功提示信息
     ElNotification({
       type: 'success',
