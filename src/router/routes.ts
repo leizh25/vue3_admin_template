@@ -18,8 +18,8 @@ export const constantRoutes = [
     name: 'layout',
     redirect: '/home',
     meta: {
-      title: 'layout',
-      icon: 'Avatar',
+      title: '', //不写title和icon, 防止展示首页时在面包屑组件多出layout面包屑
+      icon: '',
     },
     children: [
       {
@@ -60,6 +60,7 @@ export const constantRoutes = [
       title: '权限管理',
       icon: 'Lock',
     },
+    redirect: '/acl/user',
     children: [
       {
         path: '/acl/user',
@@ -98,6 +99,7 @@ export const constantRoutes = [
       title: '商品管理',
       icon: 'Goods',
     },
+    redirect: '/product/trademark',
     children: [
       {
         path: '/product/trademark',
@@ -127,7 +129,7 @@ export const constantRoutes = [
         },
       },
       {
-        path: '/product/trademark',
+        path: '/product/sku',
         component: () => import('@/views/Product/Sku/Sku.vue'),
         name: 'Sku',
         meta: {
