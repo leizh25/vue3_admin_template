@@ -7,7 +7,7 @@
       <!-- 滚动组件 -->
       <el-scrollbar class="scrollbar">
         <!-- 菜单组件 -->
-        <el-menu background-color="#00152b" text-color="#fff" active-text-color="">
+        <el-menu background-color="#00152b" text-color="#fff" active-text-color="yellowgreen" :default-active="$route.path">
           <!-- 根据路由动态生成菜单 -->
           <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
@@ -22,6 +22,8 @@
   </div>
 </template>
 <script setup lang="ts">
+//获取路由对象
+import { useRoute } from 'vue-router'
 //引入左侧菜单子组件
 import Logo from './Logo/Logo.vue'
 import Menu from './Menu/Menu.vue'
@@ -30,6 +32,9 @@ import Main from './Main/Main.vue'
 //获取用户相关的小仓库
 import useUserStore from '@/store/modules/user'
 let userStore = useUserStore()
+//获取路由对象
+let $route = useRoute()
+
 </script>
 
 <style scoped lang="scss">
