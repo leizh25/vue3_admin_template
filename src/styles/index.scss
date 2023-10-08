@@ -13,3 +13,18 @@
   background-color: yellowgreen;
   border-radius: 10px;
 }
+
+//引入进度条的样式
+@import 'nprogress/nprogress.css';
+#nprogress .bar {
+  background-color: $base-nprogress-color;
+}
+#nprogress .peg {
+  box-shadow:
+    0 0 10px $base-nprogress-color,
+    0 0 5px $base-nprogress-color;
+}
+#nprogress .spinner-icon {
+  border-top-color: $base-nprogress-color;
+  border-left-color: $base-nprogress-color;
+}
