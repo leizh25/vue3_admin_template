@@ -15,7 +15,7 @@ import setting from '@/setting'
   color: #fff;
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   img {
     width: 40px;
     height: 40px;
@@ -23,6 +23,7 @@ import setting from '@/setting'
   p {
     font-size: $base-logo-title-fontSize;
     margin-left: 10px;
+    text-wrap: nowrap;
   }
 }
 </style>
