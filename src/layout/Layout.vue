@@ -14,7 +14,10 @@
       </el-scrollbar>
     </div>
     <!-- 顶部导航 -->
-    <div class="layout_tabbar">456</div>
+    <div class="layout_tabbar">
+      <!-- layout组件的顶部导航Tabbar -->
+      <Tabbar></Tabbar>
+    </div>
     <!-- 内容展示区 -->
     <div class="layout_main">
       <Main></Main>
@@ -31,6 +34,8 @@ import Menu from './Menu/Menu.vue'
 import Main from './Main/Main.vue'
 //获取用户相关的小仓库
 import useUserStore from '@/store/modules/user'
+//引入顶部Tabbar组件
+import Tabbar from "./Tabbar/Tabbar.vue"
 let userStore = useUserStore()
 //获取路由对象
 let $route = useRoute()
