@@ -1,6 +1,6 @@
 <template>
   <el-button size="small" circle icon="Refresh" @click="updateRefresh"></el-button>
-  <el-button size="small" circle icon="FullScreen"></el-button>
+  <el-button size="small" circle icon="FullScreen" @click="fullScreen"></el-button>
   <el-button size="small" circle icon="Setting"></el-button>
   <img src="../../../../public/logo.png" style="width: 24px; height: 24px; margin: 0 10px" />
   <!-- 下拉菜单 -->
@@ -24,6 +24,14 @@ const layoutSettingStore = useLayoutSettingStore()
 //刷新按钮点击的回调
 const updateRefresh = () => {
   layoutSettingStore.refresh = !layoutSettingStore.refresh
+}
+//点击全屏按钮的回调
+const fullScreen = () => {
+  //DOM对象的一个属性, 可以用来判断当前是不是全屏模式[全屏:true,不是全屏:null]
+  let full = document.fullscreenElement
+  //切换全屏模式  文档根节点的方法requestFullscreen()实现全屏模式
+  if (!full) document.documentElement.requestFullscreen()
+  else document.exitFullscreen()
 }
 </script>
 <style scoped></style>
