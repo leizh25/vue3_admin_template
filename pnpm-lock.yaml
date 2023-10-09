@@ -37,6 +37,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^17.7.0
     version: 17.7.0
+  '@types/nprogress':
+    specifier: ^0.2.1
+    version: 0.2.1
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.7.2
     version: 6.7.2(@typescript-eslint/parser@6.7.2)(eslint@8.50.0)(typescript@5.2.2)
@@ -1033,6 +1036,10 @@ packages:
 
   /@types/normalize-package-data@2.4.2:
     resolution: {integrity: sha512-lqa4UEhhv/2sjjIQgjX8B+RBjj47eo0mzGasklVJ78UKGQY1r0VpB9XHDaZZO9qzEFDdy4MrXLuEaSmPrPSe/A==}
+    dev: true
+
+  /@types/nprogress@0.2.1:
+    resolution: {integrity: sha512-TYuyVnp+nOnimgdOydDIDYIxv2kSeuJZw4tF0p/KG7hpzcMF1WkHaREwM8O4blqfT1F7rq0nht6Ko2KVUfWzBA==}
     dev: true
 
   /@types/resolve@1.17.1:
