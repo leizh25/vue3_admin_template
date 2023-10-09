@@ -10,3 +10,6 @@ vue3 vue-router pinia vite typescript
 2. cd vue3_admin_template
 3. pnpm i
 4. pnpm dev
+
+## 配置文件
+    /src/setting.ts
