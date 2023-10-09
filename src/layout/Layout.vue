@@ -15,7 +15,7 @@
           :collapse="layoutSettingStore.fold ? true : false"
         >
           <!-- 根据路由动态生成菜单 -->
-          <Menu :menuList="userStore.menuRoutes"></Menu>
+          <MyMenu :menuList="userStore.menuRoutes"></MyMenu>
         </el-menu>
       </el-scrollbar>
     </div>
@@ -35,7 +35,7 @@
 import { useRoute } from 'vue-router'
 //引入左侧菜单子组件
 import Logo from './Logo/Logo.vue'
-import Menu from './Menu/Menu.vue'
+import MyMenu from './Menu/MyMenu.vue'
 //右侧内容展示区域
 import Main from './Main/Main.vue'
 //获取用户相关的小仓库

@@ -30,14 +30,14 @@
         </el-icon>
         <span>{{ item.meta.title }}</span>
       </template>
-      <Menu :menuList="item.children"></Menu>
+      <MyMenu :menuList="item.children"></MyMenu>
     </el-sub-menu>
   </template>
 </template>
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 //获取父组件传递过来的全部路由的数据
 defineProps(['menuList'])
-import { useRouter } from 'vue-router'
 //获取路由器对象
 const $router = useRouter()
 //点击菜单的回调
@@ -48,7 +48,7 @@ const goRoute = (vc: any) => {
 </script>
 <script lang="ts">
 export default {
-  name: 'Menu',
+  name: 'MyMenu',
 }
 </script>
 <style scoped></style>

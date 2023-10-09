@@ -9,7 +9,7 @@
     <el-breadcrumb-item v-for="item in $route.matched" :key="item.path" v-show="item.meta.title" :to="item.path">
       <!-- 面包屑展示路由的图标 -->
       <el-icon style="margin: 0 2px">
-        <component :is="item.meta.icon"></component>
+        <component :is="item.meta.icon" v-if="item.meta.icon"></component>
       </el-icon>
       <!-- 面包屑展示路由的标题 -->
       <span>{{ item.meta.title }}</span>
