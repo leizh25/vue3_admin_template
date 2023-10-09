@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>我是一级路由-Home展示登录成功以后得数据{{ userStore.userName }}</h1>
+    <h1>我是一级路由-Home展示登录成功以后得数据</h1>
   </div>
 </template>
 <script setup lang="ts">
