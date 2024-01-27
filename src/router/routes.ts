@@ -38,7 +38,7 @@ export const constantRoutes = [
     name: 'Stay',
     meta: {
       title: '入住管理',
-      icon: 'Lock',
+      icon: 'Location',
     },
     redirect: '/stay/info',
     children: [
@@ -57,7 +57,7 @@ export const constantRoutes = [
         name: 'RoomInfo',
         meta: {
           title: '房间信息',
-          icon: 'UserFilled',
+          icon: 'House',
         },
       },
       {
@@ -66,7 +66,7 @@ export const constantRoutes = [
         name: 'RoomType',
         meta: {
           title: '房间类型',
-          icon: 'Monitor',
+          icon: 'Crop',
         },
       },
     ],
@@ -77,7 +77,7 @@ export const constantRoutes = [
     name: 'Order',
     meta: {
       title: '订单管理',
-      icon: 'Lock',
+      icon: 'DocumentChecked',
     },
     redirect: '/order/info',
     children: [
@@ -87,7 +87,7 @@ export const constantRoutes = [
         name: 'OrderInfo',
         meta: {
           title: '订单信息',
-          icon: 'User',
+          icon: 'Postcard',
         },
       },
       {
@@ -96,7 +96,7 @@ export const constantRoutes = [
         name: 'Comment',
         meta: {
           title: '评价信息',
-          icon: 'UserFilled',
+          icon: 'Comment',
         },
       },
     ],
@@ -126,7 +126,7 @@ export const constantRoutes = [
         name: 'Role',
         meta: {
           title: '角色信息',
-          icon: 'UserFilled',
+          icon: 'Star',
         },
       },
     ],
@@ -146,7 +146,7 @@ export const constantRoutes = [
         component: () => import('@/views/Customer/Customer.vue'),
         meta: {
           title: '顾客管理',
-          icon: 'HomeFilled',
+          icon: 'Coin',
         },
       },
     ],
@@ -166,7 +166,7 @@ export const constantRoutes = [
         component: () => import('@/views/Hotel/Hotel.vue'),
         meta: {
           title: '酒店管理',
-          icon: 'HomeFilled',
+          icon: 'Dish',
         },
       },
     ],
