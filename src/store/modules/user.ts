@@ -1,7 +1,7 @@
 //创建用户相关的小仓库
 import { defineStore } from 'pinia'
 //引入接口
-import { reqLogin, reqUserInfo } from '@/api/user'
+import { reqLogin, reqLogout, reqUserInfo } from '@/api/user'
 //引入数据类型
 import type { loginForm, loginResponseData } from '@/api/user/type'
 import { UserState } from './types/type'
@@ -18,6 +18,7 @@ const useUserStore = defineStore('User', {
       menuRoutes: constantRoutes, //仓库存储生成菜单需要的数组(路由)
       userName: '',
       avatar: '',
+      empId: 0,
     }
   },
   //处理异步或者逻辑的地方
@@ -28,16 +29,19 @@ const useUserStore = defineStore('User', {
       // console.log('res: ', res);
       //登录请求成功200 ->token
       //登录请求失败201 ->登录失败错误信息
-      if (res.code == 200) {
+      if (res.code == 1) {
         //pinia仓库存储token
         //由于pinia或者vuex存储数据其实就是利用js对象
-        this.token = res.data.token as string
+        this.token = res.map.JWT
+        this.userName = res.data.empName
+        this.avatar = 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif'
+        this.empId = res.data.empId
         //本地存储持久化存储一份
-        SET_TOKEN(res.data.token as string)
+        SET_TOKEN(res.map.JWT)
         //能保证当前async函数返回一个成功的promise
         return 'ok'
       } else {
-        return Promise.reject(new Error(res.data.message))
+        return Promise.reject(new Error(res.msg))
       }
     },
     //获取用户信息的方法
@@ -45,9 +49,9 @@ const useUserStore = defineStore('User', {
       //获取用户信息存储仓库当中[用户头像,名字]
       const res = await reqUserInfo()
       //如果获取用户信息成功,存储一下用户信息
-      if (res.code == 200) {
-        this.userName = res.data.checkUser.username
-        this.avatar = res.data.checkUser.avatar
+      if (res.code == 1) {
+        this.userName = res.data.empName
+        this.avatar = res.data.empPhoto
         return 'ok'
       } else {
         return Promise.reject('获取用户信息失败')
@@ -60,6 +64,7 @@ const useUserStore = defineStore('User', {
       this.userName = ''
       this.avatar = ''
       REMOVE_TOKEN()
+      reqLogout()
     },
   },
   //计算属性

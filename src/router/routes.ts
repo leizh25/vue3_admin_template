@@ -33,6 +33,146 @@ export const constantRoutes = [
     ],
   },
   {
+    path: '/stay',
+    component: () => import('@/layout/Layout.vue'),
+    name: 'Stay',
+    meta: {
+      title: '入住管理',
+      icon: 'Lock',
+    },
+    redirect: '/stay/info',
+    children: [
+      {
+        path: '/stay/info',
+        component: () => import('@/views/Stay/Info/Info.vue'),
+        name: 'StayInfo',
+        meta: {
+          title: '入住信息',
+          icon: 'User',
+        },
+      },
+      {
+        path: '/stay/roominfo',
+        component: () => import('@/views/Stay/RoomInfo/RoomInfo.vue'),
+        name: 'RoomInfo',
+        meta: {
+          title: '房间信息',
+          icon: 'UserFilled',
+        },
+      },
+      {
+        path: '/stay/roomtype',
+        component: () => import('@/views/Stay/RoomType/RoomType.vue'),
+        name: 'RoomType',
+        meta: {
+          title: '房间类型',
+          icon: 'Monitor',
+        },
+      },
+    ],
+  },
+  {
+    path: '/order',
+    component: () => import('@/layout/Layout.vue'),
+    name: 'Order',
+    meta: {
+      title: '订单管理',
+      icon: 'Lock',
+    },
+    redirect: '/order/info',
+    children: [
+      {
+        path: '/order/info',
+        component: () => import('@/views/Order/Info/Info.vue'),
+        name: 'OrderInfo',
+        meta: {
+          title: '订单信息',
+          icon: 'User',
+        },
+      },
+      {
+        path: '/order/comment',
+        component: () => import('@/views/Order/Comment/Comment.vue'),
+        name: 'Comment',
+        meta: {
+          title: '评价信息',
+          icon: 'UserFilled',
+        },
+      },
+    ],
+  },
+  {
+    path: '/emp',
+    component: () => import('@/layout/Layout.vue'),
+    name: 'Emp',
+    meta: {
+      title: '员工管理',
+      icon: 'Lock',
+    },
+    redirect: '/emp/info',
+    children: [
+      {
+        path: '/emp/info',
+        component: () => import('@/views/Emp/Info/Info.vue'),
+        name: 'Info',
+        meta: {
+          title: '员工信息',
+          icon: 'User',
+        },
+      },
+      {
+        path: '/emp/role',
+        component: () => import('@/views/Emp/Role/Role.vue'),
+        name: 'Role',
+        meta: {
+          title: '角色信息',
+          icon: 'UserFilled',
+        },
+      },
+    ],
+  },
+  {
+    path: '/customer',
+    component: () => import('@/layout/Layout.vue'),
+    name: 'customer',
+    redirect: '/customer/',
+    meta: {
+      title: '', //不写title和icon, 防止展示首页时在面包屑组件多出layout面包屑
+      icon: '',
+    },
+    children: [
+      {
+        path: '/customer/',
+        component: () => import('@/views/Customer/Customer.vue'),
+        meta: {
+          title: '顾客管理',
+          icon: 'HomeFilled',
+        },
+      },
+    ],
+  },
+  {
+    path: '/hotel',
+    component: () => import('@/layout/Layout.vue'),
+    name: 'hotel',
+    redirect: '/hotle/',
+    meta: {
+      title: '', //不写title和icon, 防止展示首页时在面包屑组件多出layout面包屑
+      icon: '',
+    },
+    children: [
+      {
+        path: '/hotle/',
+        component: () => import('@/views/Hotel/Hotel.vue'),
+        meta: {
+          title: '酒店管理',
+          icon: 'HomeFilled',
+        },
+      },
+    ],
+  },
+
+  {
     //404
     path: '/404',
     component: () => import('@/views/404/404.vue'),
@@ -43,102 +183,7 @@ export const constantRoutes = [
       icon: 'DocumentDelete',
     },
   },
-  {
-    path: '/screen',
-    component: () => import('@/views/Screen/Screen.vue'),
-    name: 'Screen',
-    meta: {
-      title: '数据大屏',
-      icon: 'Platform',
-    },
-  },
-  {
-    path: '/acl',
-    component: () => import('@/layout/Layout.vue'),
-    name: 'Acl',
-    meta: {
-      title: '权限管理',
-      icon: 'Lock',
-    },
-    redirect: '/acl/user',
-    children: [
-      {
-        path: '/acl/user',
-        component: () => import('@/views/Acl/User/User.vue'),
-        name: 'User',
-        meta: {
-          title: '用户管理',
-          icon: 'User',
-        },
-      },
-      {
-        path: '/acl/role',
-        component: () => import('@/views/Acl/Rule/Rule.vue'),
-        name: 'Role',
-        meta: {
-          title: '角色管理',
-          icon: 'UserFilled',
-        },
-      },
-      {
-        path: '/acl/permission',
-        component: () => import('@/views/Acl/Permission/Permission.vue'),
-        name: 'Permission',
-        meta: {
-          title: '菜单管理',
-          icon: 'Monitor',
-        },
-      },
-    ],
-  },
-  {
-    path: '/product',
-    component: () => import('@/layout/Layout.vue'),
-    name: 'Product',
-    meta: {
-      title: '商品管理',
-      icon: 'Goods',
-    },
-    redirect: '/product/trademark',
-    children: [
-      {
-        path: '/product/trademark',
-        component: () => import('@/views/Product/Trademark/Trademark.vue'),
-        name: 'Trademark',
-        meta: {
-          title: '品牌管理',
-          icon: 'ShoppingCartFull',
-        },
-      },
-      {
-        path: '/product/attr',
-        component: () => import('@/views/Product/Attr/Attr.vue'),
-        name: 'Attr',
-        meta: {
-          title: '属性管理',
-          icon: 'ChromeFilled',
-        },
-      },
-      {
-        path: '/product/spu',
-        component: () => import('@/views/Product/Spu/Spu.vue'),
-        name: 'Spu',
-        meta: {
-          title: 'SPU管理',
-          icon: 'Calendar',
-        },
-      },
-      {
-        path: '/product/sku',
-        component: () => import('@/views/Product/Sku/Sku.vue'),
-        name: 'Sku',
-        meta: {
-          title: 'SKU管理',
-          icon: 'Orange',
-        },
-      },
-    ],
-  },
+
   {
     path: '/:pathMatch(.*)*',
     redirect: '/404',

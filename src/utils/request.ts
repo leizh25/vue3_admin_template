@@ -15,7 +15,7 @@ const request = axios.create({
 request.interceptors.request.use((config) => {
   //config配置对象,headers属性请求头,经常会给服务器端携带公共参数
   const userStore = useUserStore()
-  if (userStore.token) config.headers.token = userStore.token
+  if (userStore.token) config.headers.JWT = userStore.token
   //返回配置对象
   // console.log('config: ', config)
   return config

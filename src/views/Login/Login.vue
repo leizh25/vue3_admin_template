@@ -5,9 +5,9 @@
       <el-col :span="12" :xs="24">
         <el-form class="login_form" :model="loginFormData" :rules="rules" ref="loginForm">
           <h1>Hello</h1>
-          <h2>欢迎来到硅谷甄选</h2>
+          <h2>欢迎来到酒店管理系统</h2>
           <el-form-item prop="username">
-            <el-input :prefix-icon="User" v-model="loginFormData.username"></el-input>
+            <el-input :prefix-icon="User" v-model="loginFormData.empPhone"></el-input>
           </el-form-item>
           <el-form-item prop="password">
             <el-input :prefix-icon="Lock" type="password" show-password v-model="loginFormData.password"></el-input>
@@ -36,7 +36,7 @@ let $router = useRouter()
 //获取路由对象
 const $route = useRoute()
 //收集账号与密码的数据
-let loginFormData = reactive({ username: 'admin', password: '111111' })
+let loginFormData = reactive({ empPhone: '18111111111', password: 'admin' })
 //定义一个变量控制按钮按钮加载效果
 let loading = ref(false)
 //获取el-form组件
@@ -88,8 +88,8 @@ const validateUsername = (_rule: any, value: any, callback: any) => {
   else callback(new Error('账号长度至少5位'))
 }
 const validatePassword = (_rulea: any, value: any, callback: any) => {
-  if (value.length >= 6) callback()
-  else callback(new Error('密码长度至少6位'))
+  if (value.length >= 5) callback()
+  else callback(new Error('密码长度至少5位'))
 }
 
 //定义表单对象需要的配置对象
@@ -100,7 +100,7 @@ const rules = {
   //max:文本的长度最多多少位
   //message:错误的提示信息
   //trigger:触发校验表单的时机  change:文本发生变化  blur:失去焦点
-  username: [
+  empPhone: [
     // { required: true, min: 6, max: 10, message: '账号长度应为6-10位', trigger: 'blur' }
     { trigger: 'change', validator: validateUsername },
   ],

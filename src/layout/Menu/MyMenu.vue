@@ -44,6 +44,7 @@ const $router = useRouter()
 const goRoute = (vc: any) => {
   //路由跳转
   $router.push(vc.index)
+  // console.log('vc.index: ', vc.index);
 }
 </script>
 <script lang="ts">

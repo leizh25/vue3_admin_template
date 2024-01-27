@@ -1,4 +1,4 @@
-# 硅谷甄选运营平台
+# 酒店管理系统
 
 ## 技术架构
 
@@ -12,4 +12,5 @@ vue3 vue-router pinia vite typescript
 4. pnpm dev
 
 ## 配置文件
+
     /src/setting.ts
